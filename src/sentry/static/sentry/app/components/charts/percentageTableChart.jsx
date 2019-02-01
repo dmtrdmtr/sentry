@@ -1,7 +1,8 @@
 import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, {cx} from 'react-emotion';
+import classNames from 'classnames';
+import styled from 'react-emotion';
 
 import {PanelItem} from 'app/components/panels';
 import {t} from 'app/locale';
@@ -172,7 +173,7 @@ const Row = styled(function RowComponent({
   const linkPath = isLink && getRowLink(data[rowIndex]);
   const Component = isLink ? Link : 'div';
   const rowProps = {
-    className: cx(
+    className: classNames(
       className,
       rowIndex > -1 && dataRowClassName,
       rowIndex === -1 && headerRowClassName
